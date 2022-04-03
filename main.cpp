@@ -9,7 +9,6 @@ int main() {
     window.setFramerateLimit(60);
     Field myField(Vector2f(800, 800));
     myField.init();
-    bool isStop = false;
 
     while (window.isOpen()) {
 
@@ -19,9 +18,8 @@ int main() {
                 window.close();
             }
             if (event.type == Event::KeyPressed){
-                if (isStop || myField.isLose()) {
+                if (myField.isLose()) {
                     std::cout << "LOH" << std::endl;
-                    isStop = true;
                     if (event.key.code == Keyboard::Enter) {
                         myField.init();
                     }

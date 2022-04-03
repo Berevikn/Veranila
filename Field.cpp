@@ -11,8 +11,8 @@ Field::Field(sf::Vector2f window) {
     (*mBackgroundTexture).setSmooth(true);
     (*mWinTexture).loadFromFile("..\\win.png");
     (*mWinTexture).setSmooth(true);
-    (*mWinTexture).loadFromFile("..\\lose.png");
-    (*mWinTexture).setSmooth(true);
+    (*mLoseTexture).loadFromFile("..\\lose.png");
+    (*mLoseTexture).setSmooth(true);
     (*mBackground).setSize(*mSize);
     (*mWIN).setSize(*mSize);
     (*mWIN).setTexture(mWinTexture);
@@ -205,6 +205,7 @@ bool Field::isLose() {
     for (int i = 0; i < *mSquareOfSideCount; ++i) {
         for (int j = 0; j < *mSquareOfSideCount; ++j) {
             if(mIsEmpty[i][j]) {
+                *mIsLose = false;
                 return false;
             }
         }
@@ -227,6 +228,7 @@ bool Field::isLose() {
                 ++status[i][j];
                 if (i != *mSquareOfSideCount - 1) {
                     if (mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel()) {
+                        *mIsLose = false;
                         return false;
                     }
                     if (status[i + 1][j] != 2) {
@@ -240,6 +242,7 @@ bool Field::isLose() {
                 ++status[i][j];
                 if (j != *mSquareOfSideCount - 1) {
                     if (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel()) {
+                        *mIsLose = false;
                         return false;
                     }
                     if (status[i][j + 1] != 2) {
@@ -268,6 +271,7 @@ bool Field::isLose() {
         delete status[k];
     }
     delete[] status;
+    *mIsLose = true;
     return true;
 }
 
