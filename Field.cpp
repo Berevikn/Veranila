@@ -25,48 +25,28 @@ Field::Field(sf::Vector2f window) {
     }
 }
 
-    void Field::init() {
-        for (int i = 0; i < *mSquareOfSideCount; ++i) {
-            for (int j = 0; j < *mSquareOfSideCount; ++j) {
-                mIsEmpty[i][j] = true;
-            }
+void Field::init() {
+    for (int i = 0; i < *mSquareOfSideCount; ++i) {
+        for (int j = 0; j < *mSquareOfSideCount; ++j) {
+            mIsEmpty[i][j] = true;
         }
-        (*mBackground).setTexture(mBackgroundTexture);
-        (*mBackground).setTextureRect(sf::IntRect(0, 0, (*mSize).x, (*mSize).y));
-
-        do {
-            (*mSquareTime).restart();
-            *mPositionX = std::rand() % *mSquareOfSideCount;
-            *mPositionY = std::rand() % *mSquareOfSideCount;
-        } while(!mIsEmpty[*mPositionY][*mPositionX]);
-        Square* newSquare1 = new Square(*mSizeOfOnceSquare);
-        (*newSquare1).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                                 static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-        mSquares[*mPositionY][*mPositionX] = *newSquare1;
-        mIsEmpty[*mPositionY][*mPositionX] = false;
-
-        do {
-            (*mSquareTime).restart();
-            *mPositionX = std::rand() % *mSquareOfSideCount;
-            *mPositionY = std::rand() % *mSquareOfSideCount;
-        } while(!mIsEmpty[*mPositionY][*mPositionX]);
-        Square* newSquare2 = new Square(*mSizeOfOnceSquare);
-        (*newSquare2).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                                 static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-        mSquares[*mPositionY][*mPositionX] = *newSquare2;
-        mIsEmpty[*mPositionY][*mPositionX] = false;
     }
+    (*mBackground).setTexture(mBackgroundTexture);
+    (*mBackground).setTextureRect(sf::IntRect(0, 0, (*mSize).x, (*mSize).y));
+    addSquare();
+    addSquare();
+}
 
 
-void Field::addSquare(Square* newSquare) {
+void Field::addSquare() {
     do {
         (*mSquareTime).restart();
         *mPositionX = std::rand() % *mSquareOfSideCount;
         *mPositionY = std::rand() % *mSquareOfSideCount;
     } while(!mIsEmpty[*mPositionY][*mPositionX]);
-    (*newSquare).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
+    mSquares[*mPositionY][*mPositionX] = *(new Square(*mSizeOfOnceSquare));
+    mSquares[*mPositionY][*mPositionX].updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
                                              static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-    mSquares[*mPositionY][*mPositionX] = *newSquare;
     mIsEmpty[*mPositionY][*mPositionX] = false;
 }
 
@@ -112,16 +92,7 @@ void Field::moveDown() {
             }
         }
     }
-    do {
-        (*mSquareTime).restart();
-        *mPositionX = std::rand() % *mSquareOfSideCount;
-        *mPositionY = std::rand() % *mSquareOfSideCount;
-    } while(!mIsEmpty[*mPositionY][*mPositionX]);
-    Square* newSquare = new Square(*mSizeOfOnceSquare);
-    (*newSquare).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                             static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-    mSquares[*mPositionY][*mPositionX] = *newSquare;
-    mIsEmpty[*mPositionY][*mPositionX] = false;
+    addSquare();
 }
 
 void Field::moveUp() {
@@ -144,16 +115,7 @@ void Field::moveUp() {
             }
         }
     }
-    do {
-        (*mSquareTime).restart();
-        *mPositionX = std::rand() % *mSquareOfSideCount;
-        *mPositionY = std::rand() % *mSquareOfSideCount;
-    } while(!mIsEmpty[*mPositionY][*mPositionX]);
-    Square* newSquare = new Square(*mSizeOfOnceSquare);
-    (*newSquare).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                             static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-    mSquares[*mPositionY][*mPositionX] = *newSquare;
-    mIsEmpty[*mPositionY][*mPositionX] = false;
+    addSquare();
 }
 
 void Field::moveLeft() {
@@ -176,16 +138,7 @@ void Field::moveLeft() {
             }
         }
     }
-    do {
-        (*mSquareTime).restart();
-        *mPositionX = std::rand() % *mSquareOfSideCount;
-        *mPositionY = std::rand() % *mSquareOfSideCount;
-    } while(!mIsEmpty[*mPositionY][*mPositionX]);
-    Square* newSquare = new Square(*mSizeOfOnceSquare);
-    (*newSquare).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                             static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-    mSquares[*mPositionY][*mPositionX] = *newSquare;
-    mIsEmpty[*mPositionY][*mPositionX] = false;
+    addSquare();
 }
 
 
@@ -209,16 +162,7 @@ void Field::moveRight() {
             }
         }
     }
-    do {
-        (*mSquareTime).restart();
-        *mPositionX = std::rand() % *mSquareOfSideCount;
-        *mPositionY = std::rand() % *mSquareOfSideCount;
-    } while(!mIsEmpty[*mPositionY][*mPositionX]);
-    Square* newSquare = new Square(*mSizeOfOnceSquare);
-    (*newSquare).updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                             static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
-    mSquares[*mPositionY][*mPositionX] = *newSquare;
-    mIsEmpty[*mPositionY][*mPositionX] = false;
+    addSquare();
 }
 
 Field::~Field() {
@@ -279,23 +223,27 @@ bool Field::isLose() {
             case 0:
                 std::cout << "0, ";
                 ++status[i][j];
-                if (i != *mSquareOfSideCount - 1 && status[i + 1][j] != 2) {
+                if (i != *mSquareOfSideCount - 1) {
                     if (mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel()) {
                         return false;
                     }
-                    previous->push(1);
-                    ++i;
+                    if (status[i + 1][j] != 2) {
+                        previous->push(1);
+                        ++i;
+                    }
                 }
                 break;
             case 1:
                 std::cout << "1, ";
                 ++status[i][j];
-                if (j != *mSquareOfSideCount - 1 && status[i][j + 1] != 2) {
+                if (j != *mSquareOfSideCount - 1) {
                     if (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel()) {
                         return false;
                     }
-                    previous->push(2);
-                    ++j;
+                    if (status[i][j + 1] != 2) {
+                        previous->push(2);
+                        ++j;
+                    }
                 }
                 break;
             case 2:

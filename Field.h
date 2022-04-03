@@ -6,6 +6,7 @@
 
 class Field: public sf::Drawable {
 public:
+
     explicit Field(sf::Vector2f window);
 
     void init();
@@ -24,12 +25,14 @@ public:
 
     bool isLose();
 
-    void addSquare(Square* newSquare);
-
     ~Field() override;
 
 private:
+
+    void addSquare();
+
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
     sf::RectangleShape* mBackground = new sf::RectangleShape;
     sf::RectangleShape* mWIN = new sf::RectangleShape;
     sf::RectangleShape* mLOSE = new sf::RectangleShape;
