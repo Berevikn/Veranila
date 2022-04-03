@@ -1,5 +1,5 @@
-CMakeFiles/2048.dir/Square.cpp.obj: D:\c++\2048\Square.cpp \
- D:\c++\2048\Square.h C:/SFML-2.5.1/include/SFML/Graphics.hpp \
+CMakeFiles/2048.dir/Square.cpp.obj: C:\GitHub\Vera\Square.cpp \
+ C:\GitHub\Vera\Square.h C:/SFML-2.5.1/include/SFML/Graphics.hpp \
  C:/SFML-2.5.1/include/SFML/Window.hpp \
  C:/SFML-2.5.1/include/SFML/System.hpp \
  C:/SFML-2.5.1/include/SFML/Config.hpp \

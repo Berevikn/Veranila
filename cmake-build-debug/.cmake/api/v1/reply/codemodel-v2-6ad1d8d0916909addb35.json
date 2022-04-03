@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/c++/2048/cmake-build-debug",
-		"source" : "D:/c++/2048"
+		"build" : "C:/GitHub/Vera/cmake-build-debug",
+		"source" : "C:/GitHub/Vera"
 	},
 	"version" : 
 	{

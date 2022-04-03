@@ -1,4 +1,4 @@
-CMakeFiles/2048.dir/main.cpp.obj: D:\c++\2048\main.cpp \
+CMakeFiles/2048.dir/main.cpp.obj: C:\GitHub\Vera\main.cpp \
  C:/SFML-2.5.1/include/SFML/Graphics.hpp \
  C:/SFML-2.5.1/include/SFML/Window.hpp \
  C:/SFML-2.5.1/include/SFML/System.hpp \
@@ -252,4 +252,4 @@ CMakeFiles/2048.dir/main.cpp.obj: D:\c++\2048\main.cpp \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- D:\c++\2048\Field.h D:\c++\2048\Square.h
+ C:\GitHub\Vera\Field.h C:\GitHub\Vera\Square.h

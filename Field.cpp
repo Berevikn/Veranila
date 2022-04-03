@@ -1,5 +1,6 @@
 #include "Field.h"
 #include <iostream>
+#include <stack>
 
 Field::Field(sf::Vector2f window) {
     std::srand(std::time(0));
@@ -255,90 +256,69 @@ void Field::isWin() {
 }
 
 bool Field::isLose() {
-    *mIsLose = true;
-    for(int i = 0; i < *mSquareOfSideCount; ++i) {
-        for(int j = 0; j < *mSquareOfSideCount; ++j) {
-            if(!mIsEmpty[i][j]) {
-                if (i == 0 && j == 0) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel() && !mIsEmpty[i + 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (i == 0 && j == *mSquareOfSideCount - 1) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel() && !mIsEmpty[i + 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1]) ) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (i == 0) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel() && !mIsEmpty[i + 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (i == *mSquareOfSideCount - 1 && j == 0) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i - 1][j].getLevel() && !mIsEmpty[i - 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (i == *mSquareOfSideCount - 1 && j == *mSquareOfSideCount - 1) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i - 1][j].getLevel() && !mIsEmpty[i - 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (i == *mSquareOfSideCount - 1) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i - 1][j].getLevel() && !mIsEmpty[i - 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (j == 0) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel() && !mIsEmpty[i + 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else if (j == *mSquareOfSideCount - 1) {
-                    if ((mSquares[i][j].getLevel() == mSquares[i - 1][j].getLevel() && !mIsEmpty[i - 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
-                else {
-                    if ((mSquares[i][j].getLevel() == mSquares[i - 1][j].getLevel() && !mIsEmpty[i - 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel() && !mIsEmpty[i + 1][j]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel() && !mIsEmpty[i][j - 1]) ||
-                        (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel() && !mIsEmpty[i][j + 1])) {
-                        *mIsLose = false;
-                        break;
-                    }
-                }
+    for (int i = 0; i < *mSquareOfSideCount; ++i) {
+        for (int j = 0; j < *mSquareOfSideCount; ++j) {
+            if(mIsEmpty[i][j]) {
+                return false;
             }
-            else {
-                *mIsLose = false;
-                break;
-            }
-        }
-        if (!*mIsLose) {
-            break;
         }
     }
-    return *mIsLose;
+    std::stack<int>* previous = new std::stack<int>;
+    int** status = new int*[*mSquareOfSideCount];
+    for (int i = 0; i < *mSquareOfSideCount; ++i) {
+        status[i] = new int[*mSquareOfSideCount];
+        for (int j = 0; j < *mSquareOfSideCount; ++j) {
+            status[i][j] = 0;
+        }
+    }
+    int i = 0, j = 0;
+    std::cout << "try: ";
+    while (!(*previous).empty() || status[0][0] != 2) {
+        std::cout << "I here: ";
+        switch (status[i][j]) {
+            case 0:
+                std::cout << "0, ";
+                ++status[i][j];
+                if (i != *mSquareOfSideCount - 1 && status[i + 1][j] != 2) {
+                    if (mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel()) {
+                        return false;
+                    }
+                    previous->push(1);
+                    ++i;
+                }
+                break;
+            case 1:
+                std::cout << "1, ";
+                ++status[i][j];
+                if (j != *mSquareOfSideCount - 1 && status[i][j + 1] != 2) {
+                    if (mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel()) {
+                        return false;
+                    }
+                    previous->push(2);
+                    ++j;
+                }
+                break;
+            case 2:
+                std::cout << "2, ";
+                if (previous->top() == 1) {
+                    --i;
+                } else {
+                    --j;
+                }
+                previous->pop();
+                break;
+            default:
+                std::cout << "INFINITY";
+                break;
+        }
+        std::cout << std::endl;
+    }
+    delete previous;
+    for (int k = 0; k < *mSquareOfSideCount; ++k) {
+        delete status[k];
+    }
+    delete[] status;
+    return true;
 }
 
 

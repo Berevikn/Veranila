@@ -1,5 +1,5 @@
-CMakeFiles/2048.dir/Field.cpp.obj: D:\c++\2048\Field.cpp \
- D:\c++\2048\Field.h C:/SFML-2.5.1/include/SFML/Graphics.hpp \
+CMakeFiles/2048.dir/Field.cpp.obj: C:\GitHub\Vera\Field.cpp \
+ C:\GitHub\Vera\Field.h C:/SFML-2.5.1/include/SFML/Graphics.hpp \
  C:/SFML-2.5.1/include/SFML/Window.hpp \
  C:/SFML-2.5.1/include/SFML/System.hpp \
  C:/SFML-2.5.1/include/SFML/Config.hpp \
@@ -249,7 +249,12 @@ CMakeFiles/2048.dir/Field.cpp.obj: D:\c++\2048\Field.cpp \
  C:/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
  C:/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
  C:/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
- D:\c++\2048\Square.h \
+ C:\GitHub\Vera\Square.h \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
- C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stack \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/deque \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_deque.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/deque.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_stack.h
