@@ -6,6 +6,7 @@ set(SFML_ROOT C:/SFML-2.5.1)
 set(SFML_STATIC_LIBRARIES FALSE)
 #include_directories(${SFML_ROOT}/lib)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules")
+set(CMAKE_EXE_LINKER_FLAGS "-static")
 find_package(SFML 2 REQUIRED COMPONENTS system window graphics network
         audio)
 if(SFML_FOUND)
