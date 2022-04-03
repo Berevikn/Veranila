@@ -10,8 +10,12 @@ Square::Square(sf::Vector2f size) {
     *mLevel = 1;
 }
 
-void Square::updatePosition(sf::Vector2f position) {
+void Square::setPosition(sf::Vector2f position) {
     (*mSquare).setPosition(position);
+}
+
+void Square::move(sf::Vector2f position) {
+    (*mSquare).move(position - mSquare->getPosition());
 }
 
 void Square::draw(sf::RenderTarget& target, sf::RenderStates states) const {

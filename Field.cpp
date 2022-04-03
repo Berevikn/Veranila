@@ -45,8 +45,9 @@ void Field::addSquare() {
         *mPositionY = std::rand() % *mSquareOfSideCount;
     } while(!mIsEmpty[*mPositionY][*mPositionX]);
     mSquares[*mPositionY][*mPositionX] = *(new Square(*mSizeOfOnceSquare));
-    mSquares[*mPositionY][*mPositionX].updatePosition(sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
-                                             static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
+    mSquares[*mPositionY][*mPositionX].setPosition(
+            sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
+                         static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
     mIsEmpty[*mPositionY][*mPositionX] = false;
 }
 
@@ -80,7 +81,7 @@ void Field::moveDown() {
                 if (*mSquaresCountBefore == 0 || mSquares[*mSquareOfSideCount - *mSquaresCountBefore][j].getLevel() != mSquares[i][j].getLevel()) {
                     mIsEmpty[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j] = false;
                     mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j] = mSquares[i][j];
-                    mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j].updatePosition(
+                    mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j].move(
                             sf::Vector2f(mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j].getPosition().x,
                                          (float) (*mSquareOfSideCount - 1 - *mSquaresCountBefore) *
                                          (*mSizeOfOnceSquare).y));
@@ -104,7 +105,7 @@ void Field::moveUp() {
                 if (*mSquaresCountBefore == 0 || mSquares[*mSquaresCountBefore - 1][j].getLevel() != mSquares[i][j].getLevel()) {
                     mIsEmpty[*mSquaresCountBefore][j] = false;
                     mSquares[*mSquaresCountBefore][j] = mSquares[i][j];
-                    mSquares[*mSquaresCountBefore][j].updatePosition(
+                    mSquares[*mSquaresCountBefore][j].move(
                             sf::Vector2f(mSquares[*mSquaresCountBefore][j].getPosition().x,
                                          (float) (*mSquaresCountBefore) * (*mSizeOfOnceSquare).y));
                     ++(*mSquaresCountBefore);
@@ -127,7 +128,7 @@ void Field::moveLeft() {
                 if (*mSquaresCountBefore == 0 || mSquares[i][*mSquaresCountBefore - 1].getLevel() != mSquares[i][j].getLevel()) {
                     mIsEmpty[i][*mSquaresCountBefore] = false;
                     mSquares[i][*mSquaresCountBefore] = mSquares[i][j];
-                    mSquares[i][*mSquaresCountBefore].updatePosition(
+                    mSquares[i][*mSquaresCountBefore].move(
                             sf::Vector2f((float) (*mSquaresCountBefore) * (*mSizeOfOnceSquare).x,
                                          mSquares[i][*mSquaresCountBefore].getPosition().y));
                     ++(*mSquaresCountBefore);
@@ -151,9 +152,10 @@ void Field::moveRight() {
                 if (*mSquaresCountBefore == 0 || mSquares[i][*mSquareOfSideCount - *mSquaresCountBefore].getLevel() != mSquares[i][j].getLevel()) {
                     mIsEmpty[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore] = false;
                     mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore] = mSquares[i][j];
-                    mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore].updatePosition(
-                            sf::Vector2f((float) (*mSquareOfSideCount - 1 - *mSquaresCountBefore) * (*mSizeOfOnceSquare).x,
-                                         mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore].getPosition().y));
+                    mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore].move(
+                            sf::Vector2f(
+                                    (float) (*mSquareOfSideCount - 1 - *mSquaresCountBefore) * (*mSizeOfOnceSquare).x,
+                                    mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore].getPosition().y));
                     ++(*mSquaresCountBefore);
                 }
                 else {

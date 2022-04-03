@@ -11,7 +11,9 @@ public:
 
     void levelUp();
 
-    void updatePosition(sf::Vector2f position);
+    void setPosition(sf::Vector2f position);
+
+    void move(sf::Vector2f position);
 
     sf::Vector2f getPosition();
 

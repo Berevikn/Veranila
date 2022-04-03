@@ -28,24 +28,21 @@ int main() {
                 } else {
                     if (event.key.code == Keyboard::Down) {
                             myField.moveDown();
-                            myField.isWin();
                             std::cout << "DOWN" << std::endl;
                     }
                     if (event.key.code == Keyboard::Up) {
                             myField.moveUp();
-                            myField.isWin();
                             std::cout << "UP" << std::endl;
                     }
                     if (event.key.code == Keyboard::Right) {
                             myField.moveRight();
-                            myField.isWin();
                             std::cout << "RIGHT" << std::endl;
                     }
                     if (event.key.code == Keyboard::Left) {
                             myField.moveLeft();
-                            myField.isWin();
                             std::cout << "LEFT" << std::endl;
                     }
+                    myField.isWin();
                 }
             }
 
