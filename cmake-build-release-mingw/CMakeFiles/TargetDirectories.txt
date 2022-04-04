@@ -1,3 +1,0 @@
-C:/GitHub/Vera/cmake-build-release-mingw/CMakeFiles/2048.dir
-C:/GitHub/Vera/cmake-build-release-mingw/CMakeFiles/edit_cache.dir
-C:/GitHub/Vera/cmake-build-release-mingw/CMakeFiles/rebuild_cache.dir
