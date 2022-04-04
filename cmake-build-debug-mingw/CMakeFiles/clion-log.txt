@@ -1,13 +1,22 @@
-"C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\GitHub\Vera
-CMake Error at CMakeLists.txt:10 (find_package):
-  Could not find a configuration file for package "SFML" that is compatible
-  with requested version "2".
-
-  The following configuration files were considered but not accepted:
-
-    C:/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake, version: 2.5.1 (32bit)
-
+"C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\c++\2048
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2021.3/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2021.3/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at cmake_modules/FindSFML.cmake:354 (message):
+  Could NOT find SFML (missing: SFML_SYSTEM_LIBRARY SFML_WINDOW_LIBRARY
+  SFML_GRAPHICS_LIBRARY SFML_NETWORK_LIBRARY SFML_AUDIO_LIBRARY)
+Call Stack (most recent call first):
+  CMakeLists.txt:9 (find_package)
 
 
 -- Configuring incomplete, errors occurred!
-See also "C:/GitHub/Vera/cmake-build-debug-mingw/CMakeFiles/CMakeOutput.log".
+See also "D:/c++/2048/cmake-build-debug-mingw/CMakeFiles/CMakeOutput.log".
