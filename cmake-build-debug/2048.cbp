@@ -92,6 +92,12 @@
 		<Unit filename="C:/GitHub/Vera/Field.h">
 			<Option target="2048"/>
 		</Unit>
+		<Unit filename="C:/GitHub/Vera/Menu.cpp">
+			<Option target="2048"/>
+		</Unit>
+		<Unit filename="C:/GitHub/Vera/Menu.h">
+			<Option target="2048"/>
+		</Unit>
 		<Unit filename="C:/GitHub/Vera/Square.cpp">
 			<Option target="2048"/>
 		</Unit>

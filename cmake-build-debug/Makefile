@@ -152,6 +152,30 @@ Field.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2048.dir\build.make CMakeFiles/2048.dir/Field.cpp.s
 .PHONY : Field.cpp.s
 
+Menu.obj: Menu.cpp.obj
+.PHONY : Menu.obj
+
+# target to build an object file
+Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2048.dir\build.make CMakeFiles/2048.dir/Menu.cpp.obj
+.PHONY : Menu.cpp.obj
+
+Menu.i: Menu.cpp.i
+.PHONY : Menu.i
+
+# target to preprocess a source file
+Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2048.dir\build.make CMakeFiles/2048.dir/Menu.cpp.i
+.PHONY : Menu.cpp.i
+
+Menu.s: Menu.cpp.s
+.PHONY : Menu.s
+
+# target to generate assembly for a file
+Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2048.dir\build.make CMakeFiles/2048.dir/Menu.cpp.s
+.PHONY : Menu.cpp.s
+
 Square.obj: Square.cpp.obj
 .PHONY : Square.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... Field.obj
 	@echo ... Field.i
 	@echo ... Field.s
+	@echo ... Menu.obj
+	@echo ... Menu.i
+	@echo ... Menu.s
 	@echo ... Square.obj
 	@echo ... Square.i
 	@echo ... Square.s

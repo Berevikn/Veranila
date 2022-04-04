@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(2048)
 set(CMAKE_CXX_STANDARD 17)
-add_executable(2048 main.cpp Square.h Square.cpp Field.h Field.cpp)
+add_executable(2048 main.cpp Square.h Square.cpp Field.h Field.cpp Menu.h Menu.cpp)
 set(SFML_ROOT C:/SFML-2.5.1)
 set(SFML_STATIC_LIBRARIES FALSE)
 #include_directories(${SFML_ROOT}/lib)

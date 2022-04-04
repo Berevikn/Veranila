@@ -252,4 +252,10 @@ CMakeFiles/2048.dir/main.cpp.obj: C:\GitHub\Vera\main.cpp \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:\GitHub\Vera\Field.h C:\GitHub\Vera\Square.h
+ C:\GitHub\Vera\Field.h C:\GitHub\Vera\Square.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stack \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/deque \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_deque.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/deque.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_stack.h \
+ C:\GitHub\Vera\Menu.h

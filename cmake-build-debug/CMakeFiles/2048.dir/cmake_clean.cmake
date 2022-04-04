@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "2048.pdb"
   "CMakeFiles/2048.dir/Field.cpp.obj"
   "CMakeFiles/2048.dir/Field.cpp.obj.d"
+  "CMakeFiles/2048.dir/Menu.cpp.obj"
+  "CMakeFiles/2048.dir/Menu.cpp.obj.d"
   "CMakeFiles/2048.dir/Square.cpp.obj"
   "CMakeFiles/2048.dir/Square.cpp.obj.d"
   "CMakeFiles/2048.dir/main.cpp.obj"

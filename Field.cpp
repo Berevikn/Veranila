@@ -1,9 +1,6 @@
 #include "Field.h"
-#include <iostream>
-#include <stack>
 
 Field::Field(sf::Vector2f window) {
-    std::srand(std::time(0));
     *mSize = window;
     *mSizeOfOnceSquare = sf::Vector2f((*mSize).x / static_cast<float>(*mSquareOfSideCount), (*mSize).y / static_cast<float>(*mSquareOfSideCount));
     (*mBackgroundTexture).loadFromFile("..\\square0.png");
@@ -39,8 +36,8 @@ void Field::init() {
 
 
 void Field::addSquare() {
+    std::srand(std::time(0));
     do {
-        (*mSquareTime).restart();
         *mPositionX = std::rand() % *mSquareOfSideCount;
         *mPositionY = std::rand() % *mSquareOfSideCount;
     } while(!mIsEmpty[*mPositionY][*mPositionX]);
@@ -49,10 +46,6 @@ void Field::addSquare() {
             sf::Vector2f(static_cast<float >(*mPositionX) * (*mSizeOfOnceSquare).x,
                          static_cast<float>(*mPositionY) * (*mSizeOfOnceSquare).y));
     mIsEmpty[*mPositionY][*mPositionX] = false;
-}
-
-sf::Vector2f Field::getSizeSquare() {
-    return *mSizeOfOnceSquare;
 }
 
 void Field::draw(sf::RenderTarget& target, sf::RenderStates states) const {

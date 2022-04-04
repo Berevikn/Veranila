@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Square.h"
+#include <stack>
+#include <iostream>
 
 class Field: public sf::Drawable {
 public:
@@ -10,8 +12,6 @@ public:
     explicit Field(sf::Vector2f window);
 
     void init();
-
-    sf::Vector2f getSizeSquare();
 
     void moveDown();
     void moveRight();
