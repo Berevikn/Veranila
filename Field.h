@@ -14,11 +14,8 @@ public:
     sf::Vector2f getSizeSquare();
 
     void moveDown();
-
     void moveRight();
-
     void moveUp();
-
     void moveLeft();
 
     void isWin();
@@ -28,6 +25,11 @@ public:
     ~Field() override;
 
 private:
+
+    void shiftDownInOnceLine(int j);
+    void shiftRightInOnceLine(int i);
+    void shiftUpInOnceLine(int j);
+    void shiftLeftInOnceLine(int i);
 
     void addSquare();
 
@@ -45,7 +47,7 @@ private:
     int* mPositionX = new int;
     int* mPositionY = new int;
     int* mSquareOfSideCount = new int(4);
-    int* mSquaresCountBefore = new int;
+    int* mSquaresCountMoved = new int;
     Square** mSquares = new Square*[*mSquareOfSideCount];
     bool** mIsEmpty = new bool*[*mSquareOfSideCount];
     bool* mIsWin = new bool(false);

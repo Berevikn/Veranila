@@ -74,70 +74,42 @@ void Field::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
 void Field::moveDown() {
     for (int j = 0; j < *mSquareOfSideCount; ++j) {
-        *mSquaresCountBefore = 0;
-        for (int i = *mSquareOfSideCount - 1; i >= 0; --i) {
-            if(!mIsEmpty[i][j]) {
-                mIsEmpty[i][j] = true;
-                if (*mSquaresCountBefore == 0 || mSquares[*mSquareOfSideCount - *mSquaresCountBefore][j].getLevel() != mSquares[i][j].getLevel()) {
-                    mIsEmpty[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j] = false;
-                    mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j] = mSquares[i][j];
-                    mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j].move(
-                            sf::Vector2f(mSquares[*mSquareOfSideCount - 1 - *mSquaresCountBefore][j].getPosition().x,
-                                         (float) (*mSquareOfSideCount - 1 - *mSquaresCountBefore) *
-                                         (*mSizeOfOnceSquare).y));
-                    ++(*mSquaresCountBefore);
-                }
-                else {
-                    mSquares[*mSquareOfSideCount - *mSquaresCountBefore][j].levelUp();
-                }
+        shiftDownInOnceLine(j);
+        for (int i = *mSquareOfSideCount - 1; i > 0; --i) {
+            if (!mIsEmpty[i][j] && !mIsEmpty[i - 1][j] && mSquares[i][j].getLevel() == mSquares[i - 1][j].getLevel()) {
+                mSquares[i][j].levelUp();
+                mIsEmpty[i - 1][j] = true;
             }
         }
+        shiftDownInOnceLine(j);
     }
     addSquare();
 }
 
 void Field::moveUp() {
     for (int j = 0; j < *mSquareOfSideCount; ++j) {
-        *mSquaresCountBefore = 0;
-        for (int i = 0; i < *mSquareOfSideCount; ++i) {
-            if(!mIsEmpty[i][j]) {
-                mIsEmpty[i][j] = true;
-                if (*mSquaresCountBefore == 0 || mSquares[*mSquaresCountBefore - 1][j].getLevel() != mSquares[i][j].getLevel()) {
-                    mIsEmpty[*mSquaresCountBefore][j] = false;
-                    mSquares[*mSquaresCountBefore][j] = mSquares[i][j];
-                    mSquares[*mSquaresCountBefore][j].move(
-                            sf::Vector2f(mSquares[*mSquaresCountBefore][j].getPosition().x,
-                                         (float) (*mSquaresCountBefore) * (*mSizeOfOnceSquare).y));
-                    ++(*mSquaresCountBefore);
-                }
-                else {
-                    mSquares[*mSquaresCountBefore - 1][j].levelUp();
-                }
+        shiftUpInOnceLine(j);
+        for (int i = 0; i < *mSquareOfSideCount - 1; ++i) {
+            if (!mIsEmpty[i][j] && !mIsEmpty[i + 1][j] && mSquares[i][j].getLevel() == mSquares[i + 1][j].getLevel()) {
+                mSquares[i][j].levelUp();
+                mIsEmpty[i + 1][j] = true;
             }
         }
+        shiftUpInOnceLine(j);
     }
     addSquare();
 }
 
 void Field::moveLeft() {
     for (int i = 0; i < *mSquareOfSideCount; ++i) {
-        *mSquaresCountBefore = 0;
-        for (int j = 0; j < *mSquareOfSideCount; ++j) {
-            if(!mIsEmpty[i][j]) {
-                mIsEmpty[i][j] = true;
-                if (*mSquaresCountBefore == 0 || mSquares[i][*mSquaresCountBefore - 1].getLevel() != mSquares[i][j].getLevel()) {
-                    mIsEmpty[i][*mSquaresCountBefore] = false;
-                    mSquares[i][*mSquaresCountBefore] = mSquares[i][j];
-                    mSquares[i][*mSquaresCountBefore].move(
-                            sf::Vector2f((float) (*mSquaresCountBefore) * (*mSizeOfOnceSquare).x,
-                                         mSquares[i][*mSquaresCountBefore].getPosition().y));
-                    ++(*mSquaresCountBefore);
-                }
-                else {
-                    mSquares[i][*mSquaresCountBefore - 1].levelUp();
-                }
+        shiftLeftInOnceLine(i);
+        for (int j = 0; j < *mSquareOfSideCount - 1; ++j) {
+            if (!mIsEmpty[i][j] && !mIsEmpty[i][j + 1] && mSquares[i][j].getLevel() == mSquares[i][j + 1].getLevel()) {
+                mSquares[i][j].levelUp();
+                mIsEmpty[i][j + 1] = true;
             }
         }
+        shiftLeftInOnceLine(i);
     }
     addSquare();
 }
@@ -145,24 +117,14 @@ void Field::moveLeft() {
 
 void Field::moveRight() {
     for (int i = 0; i < *mSquareOfSideCount; ++i) {
-        *mSquaresCountBefore = 0;
-        for (int j = *mSquareOfSideCount - 1; j >= 0; --j) {
-            if(!mIsEmpty[i][j]) {
-                mIsEmpty[i][j] = true;
-                if (*mSquaresCountBefore == 0 || mSquares[i][*mSquareOfSideCount - *mSquaresCountBefore].getLevel() != mSquares[i][j].getLevel()) {
-                    mIsEmpty[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore] = false;
-                    mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore] = mSquares[i][j];
-                    mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore].move(
-                            sf::Vector2f(
-                                    (float) (*mSquareOfSideCount - 1 - *mSquaresCountBefore) * (*mSizeOfOnceSquare).x,
-                                    mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountBefore].getPosition().y));
-                    ++(*mSquaresCountBefore);
-                }
-                else {
-                    mSquares[i][*mSquareOfSideCount - *mSquaresCountBefore].levelUp();
-                }
+        shiftRightInOnceLine(i);
+        for (int j = *mSquareOfSideCount - 1; j > 0; --j) {
+            if (!mIsEmpty[i][j] && !mIsEmpty[i][j - 1] && mSquares[i][j].getLevel() == mSquares[i][j - 1].getLevel()) {
+                mSquares[i][j].levelUp();
+                mIsEmpty[i][j - 1] = true;
             }
         }
+        shiftRightInOnceLine(i);
     }
     addSquare();
 }
@@ -174,7 +136,7 @@ Field::~Field() {
     }
     delete[] mSquares;
     delete[] mIsEmpty;
-    delete mSquaresCountBefore;
+    delete mSquaresCountMoved;
     delete mSizeOfOnceSquare;
     delete mSize;
     delete mPositionX;
@@ -273,6 +235,68 @@ bool Field::isLose() {
     delete[] status;
     *mIsLose = true;
     return true;
+}
+
+void Field::shiftDownInOnceLine(int j) {
+    *mSquaresCountMoved = 0;
+    for (int i = *mSquareOfSideCount - 1; i >= 0; --i) {
+        if(!mIsEmpty[i][j]) {
+            mIsEmpty[i][j] = true;
+            mIsEmpty[*mSquareOfSideCount - 1 - *mSquaresCountMoved][j] = false;
+            mSquares[*mSquareOfSideCount - 1 - *mSquaresCountMoved][j] = mSquares[i][j];
+            mSquares[*mSquareOfSideCount - 1 - *mSquaresCountMoved][j].move(
+                    sf::Vector2f(mSquares[*mSquareOfSideCount - 1 - *mSquaresCountMoved][j].getPosition().x,
+                                 (float) (*mSquareOfSideCount - 1 - *mSquaresCountMoved) *
+                                 (*mSizeOfOnceSquare).y));
+            ++(*mSquaresCountMoved);
+        }
+    }
+}
+
+void Field::shiftRightInOnceLine(int i) {
+    *mSquaresCountMoved = 0;
+    for (int j = *mSquareOfSideCount - 1; j >= 0; --j) {
+        if(!mIsEmpty[i][j]) {
+            mIsEmpty[i][j] = true;
+            mIsEmpty[i][*mSquareOfSideCount - 1 - *mSquaresCountMoved] = false;
+            mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountMoved] = mSquares[i][j];
+            mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountMoved].move(
+                    sf::Vector2f(
+                            (float) (*mSquareOfSideCount - 1 - *mSquaresCountMoved) * (*mSizeOfOnceSquare).x,
+                            mSquares[i][*mSquareOfSideCount - 1 - *mSquaresCountMoved].getPosition().y));
+            ++(*mSquaresCountMoved);
+        }
+    }
+}
+
+void Field::shiftUpInOnceLine(int j) {
+    *mSquaresCountMoved = 0;
+    for (int i = 0; i < *mSquareOfSideCount; ++i) {
+        if(!mIsEmpty[i][j]) {
+            mIsEmpty[i][j] = true;
+            mIsEmpty[*mSquaresCountMoved][j] = false;
+            mSquares[*mSquaresCountMoved][j] = mSquares[i][j];
+            mSquares[*mSquaresCountMoved][j].move(
+                    sf::Vector2f(mSquares[*mSquaresCountMoved][j].getPosition().x,
+                                 (float) (*mSquaresCountMoved) * (*mSizeOfOnceSquare).y));
+            ++(*mSquaresCountMoved);
+        }
+    }
+}
+
+void Field::shiftLeftInOnceLine(int i) {
+    *mSquaresCountMoved = 0;
+    for (int j = 0; j < *mSquareOfSideCount; ++j) {
+        if(!mIsEmpty[i][j]) {
+            mIsEmpty[i][j] = true;
+            mIsEmpty[i][*mSquaresCountMoved] = false;
+            mSquares[i][*mSquaresCountMoved] = mSquares[i][j];
+            mSquares[i][*mSquaresCountMoved].move(
+                    sf::Vector2f((float) (*mSquaresCountMoved) * (*mSizeOfOnceSquare).x,
+                                 mSquares[i][*mSquaresCountMoved].getPosition().y));
+            ++(*mSquaresCountMoved);
+        }
+    }
 }
 
 
