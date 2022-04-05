@@ -73,60 +73,60 @@ CMakeFiles/2048.dir/main.cpp.obj: CMakeFiles/2048.dir/includes_CXX.rsp
 CMakeFiles/2048.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/2048.dir/main.cpp.obj: CMakeFiles/2048.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\GitHub\Vera\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/2048.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/main.cpp.obj -MF CMakeFiles\2048.dir\main.cpp.obj.d -o CMakeFiles\2048.dir\main.cpp.obj -c C:\GitHub\Vera\main.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/main.cpp.obj -MF CMakeFiles\2048.dir\main.cpp.obj.d -o CMakeFiles\2048.dir\main.cpp.obj -c C:\GitHub\Vera\main.cpp
 
 CMakeFiles/2048.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2048.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\main.cpp > CMakeFiles\2048.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\main.cpp > CMakeFiles\2048.dir\main.cpp.i
 
 CMakeFiles/2048.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2048.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\main.cpp -o CMakeFiles\2048.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\main.cpp -o CMakeFiles\2048.dir\main.cpp.s
 
 CMakeFiles/2048.dir/Square.cpp.obj: CMakeFiles/2048.dir/flags.make
 CMakeFiles/2048.dir/Square.cpp.obj: CMakeFiles/2048.dir/includes_CXX.rsp
 CMakeFiles/2048.dir/Square.cpp.obj: ../Square.cpp
 CMakeFiles/2048.dir/Square.cpp.obj: CMakeFiles/2048.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\GitHub\Vera\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/2048.dir/Square.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/Square.cpp.obj -MF CMakeFiles\2048.dir\Square.cpp.obj.d -o CMakeFiles\2048.dir\Square.cpp.obj -c C:\GitHub\Vera\Square.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/Square.cpp.obj -MF CMakeFiles\2048.dir\Square.cpp.obj.d -o CMakeFiles\2048.dir\Square.cpp.obj -c C:\GitHub\Vera\Square.cpp
 
 CMakeFiles/2048.dir/Square.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2048.dir/Square.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\Square.cpp > CMakeFiles\2048.dir\Square.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\Square.cpp > CMakeFiles\2048.dir\Square.cpp.i
 
 CMakeFiles/2048.dir/Square.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2048.dir/Square.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\Square.cpp -o CMakeFiles\2048.dir\Square.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\Square.cpp -o CMakeFiles\2048.dir\Square.cpp.s
 
 CMakeFiles/2048.dir/Field.cpp.obj: CMakeFiles/2048.dir/flags.make
 CMakeFiles/2048.dir/Field.cpp.obj: CMakeFiles/2048.dir/includes_CXX.rsp
 CMakeFiles/2048.dir/Field.cpp.obj: ../Field.cpp
 CMakeFiles/2048.dir/Field.cpp.obj: CMakeFiles/2048.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\GitHub\Vera\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2048.dir/Field.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/Field.cpp.obj -MF CMakeFiles\2048.dir\Field.cpp.obj.d -o CMakeFiles\2048.dir\Field.cpp.obj -c C:\GitHub\Vera\Field.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/Field.cpp.obj -MF CMakeFiles\2048.dir\Field.cpp.obj.d -o CMakeFiles\2048.dir\Field.cpp.obj -c C:\GitHub\Vera\Field.cpp
 
 CMakeFiles/2048.dir/Field.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2048.dir/Field.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\Field.cpp > CMakeFiles\2048.dir\Field.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\Field.cpp > CMakeFiles\2048.dir\Field.cpp.i
 
 CMakeFiles/2048.dir/Field.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2048.dir/Field.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\Field.cpp -o CMakeFiles\2048.dir\Field.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\Field.cpp -o CMakeFiles\2048.dir\Field.cpp.s
 
 CMakeFiles/2048.dir/Menu.cpp.obj: CMakeFiles/2048.dir/flags.make
 CMakeFiles/2048.dir/Menu.cpp.obj: CMakeFiles/2048.dir/includes_CXX.rsp
 CMakeFiles/2048.dir/Menu.cpp.obj: ../Menu.cpp
 CMakeFiles/2048.dir/Menu.cpp.obj: CMakeFiles/2048.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\GitHub\Vera\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2048.dir/Menu.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/Menu.cpp.obj -MF CMakeFiles\2048.dir\Menu.cpp.obj.d -o CMakeFiles\2048.dir\Menu.cpp.obj -c C:\GitHub\Vera\Menu.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2048.dir/Menu.cpp.obj -MF CMakeFiles\2048.dir\Menu.cpp.obj.d -o CMakeFiles\2048.dir\Menu.cpp.obj -c C:\GitHub\Vera\Menu.cpp
 
 CMakeFiles/2048.dir/Menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2048.dir/Menu.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\Menu.cpp > CMakeFiles\2048.dir\Menu.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\Vera\Menu.cpp > CMakeFiles\2048.dir\Menu.cpp.i
 
 CMakeFiles/2048.dir/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2048.dir/Menu.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~2.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\Menu.cpp -o CMakeFiles\2048.dir\Menu.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\Vera\Menu.cpp -o CMakeFiles\2048.dir\Menu.cpp.s
 
 # Object files for target 2048
 2048_OBJECTS = \
